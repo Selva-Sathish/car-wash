@@ -41,12 +41,13 @@ else
 
 }
 
+$userIsLoggedIn = isset($_SESSION['user']); // Checks if the 'user' key is in the session
 
-// if(!isset($_SESSION['user'])){
-//     header('location:signin.php');
-// }
-// else{ 
-//     ?>
+// Set the appropriate attributes for the 'Book Now' button
+$hrefAttribute = $userIsLoggedIn 
+    ? 'data-toggle="modal" data-target="#myModal"' 
+    : 'href="signin.php"';
+?>
 
 
 
@@ -270,7 +271,7 @@ else
                         <div class="price-item">
                             <div class="price-header">
                                 <h3>Basic Cleaning</h3>
-                                <h2><span>$</span><strong>10</strong><span>.99</span></h2>
+                                <h2><span>&#8377;</span><strong>199</strong></h2>
                             </div>
                             <div class="price-body">
                                 <ul>
@@ -282,7 +283,7 @@ else
                                 </ul>
                             </div>
                             <div class="price-footer">
-                                <a class="btn btn-custom"  data-toggle="modal" data-target="#myModal">Book Now</a>
+                            <a class="btn btn-custom" <?php echo $hrefAttribute; ?>>Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -290,7 +291,7 @@ else
                         <div class="price-item featured-item">
                             <div class="price-header">
                                 <h3>Premium Cleaning</h3>
-                                <h2><span>$</span><strong>20</strong><span>.99</span></h2>
+                                <h2><span>&#8377;</span><strong>499</strong></h2>
                             </div>
                             <div class="price-body">
                                 <ul>
@@ -302,7 +303,7 @@ else
                                 </ul>
                             </div>
                             <div class="price-footer">
-                                <a class="btn btn-custom"  data-toggle="modal" data-target="#myModal">Book Now</a>
+                            <a class="btn btn-custom" <?php echo $hrefAttribute; ?>>Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -310,7 +311,7 @@ else
                         <div class="price-item">
                             <div class="price-header">
                                 <h3>Complex Cleaning</h3>
-                                <h2><span>$</span><strong>30</strong><span>.99</span></h2>
+                                <h2><span>&#8377;</span><strong>299</strong></h2>
                             </div>
                             <div class="price-body">
                                 <ul>
@@ -322,7 +323,7 @@ else
                                 </ul>
                             </div>
                             <div class="price-footer">
-                                <a class="btn btn-custom"  data-toggle="modal" data-target="#myModal">Book Now</a>
+                                <a class="btn btn-custom" <?php echo $hrefAttribute; ?>>Book Now</a>
                             </div>
                         </div>
                     </div>

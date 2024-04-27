@@ -62,7 +62,16 @@
     <p class="text-sm text-gray-500 mt-12">&copy; 2020 Abstract UI - All Rights Reserved.</p>
   </div>
 </div>
-
 </section>    
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+    window.onload = swal({
+      title : 'Alert',
+      text : "you need to create a account to book" ,
+    });
+</script>
 </body>
 </html>
